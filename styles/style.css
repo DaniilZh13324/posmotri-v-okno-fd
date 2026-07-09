@@ -39,8 +39,17 @@ fieldset {
   width: 1140px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
   gap: 30px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .result {
@@ -56,13 +65,66 @@ fieldset {
 .result__video {
   width: 100%;
   height: 100%;
-object-fit: contain;
+  object-fit: contain;
+}
+
+.title {
+  color: rgba(255, 255, 255);
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: rgba(84, 80, 80);
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+input.search-form__textfield {
+  color: (255, 255, 255);
+  border: 1px solid rgba(255, 255, 255);
+  border-right-style: none;
+  border-left-style: none;
+  background-color: rgba(27, 25, 25);
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+}
+
+.search-form__textfield::placeholder {
+  color: (255, 255, 255 / 0.7);
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
 }
 
 .content__details {
@@ -76,7 +138,7 @@ object-fit: contain;
 .content__list-container {
   display: flex;
   flex-direction: column;
-  height: 399px;
+  height: 298px;
   overflow-y: auto;
   gap: 30px;
 }
@@ -85,6 +147,26 @@ object-fit: contain;
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.content__video-card-title {
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.content__video-card-description {
+  line-height: 16.2px;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255);
 }
 
 .content__video-card {
@@ -107,6 +189,7 @@ ul,
 ol {
   list-style: none;
 }
+
 
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
